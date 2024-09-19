@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+
+    <SolidColorBrush x:Key="BackgroundColor">#efefef</SolidColorBrush>
+    <SolidColorBrush x:Key="ButtonColor">#2563eb</SolidColorBrush>
+    <SolidColorBrush x:Key="ButtonHoverColor">#2563eb</SolidColorBrush>
+    <SolidColorBrush x:Key="ButtonSelectedColor">#0050ff</SolidColorBrush>
+    <SolidColorBrush x:Key="InputColor">#2563eb</SolidColorBrush>
+    <SolidColorBrush x:Key="SelectedColor">#2563eb</SolidColorBrush>
+    <SolidColorBrush x:Key="TextColor">#2563eb</SolidColorBrush>
+    <SolidColorBrush x:Key="BorderColor">#efefef</SolidColorBrush>
+    <SolidColorBrush x:Key="BlackColor">#2563eb</SolidColorBrush>
+
+
+
+</ResourceDictionary>
