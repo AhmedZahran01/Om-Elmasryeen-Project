@@ -1,0 +1,123 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=netstandard">
+
+
+
+    <system:String x:Key="AdmissionsSidebar">Admissions</system:String>
+    <system:String x:Key="AppointmentsSidebar">Rendez-vous</system:String>
+    <system:String x:Key="ChangePassword">Changer le mot de passe</system:String>
+    <system:String x:Key="DarkTheme">Thème sombre</system:String>
+    <system:String x:Key="Doctor">Médecin</system:String>
+    <system:String x:Key="ErrorEmptyFields">Les champs requis ne peuvent pas être vides !</system:String>
+    <system:String x:Key="ErrorUsernameAlreadyExists">Le nom d'utilisateur existe déjà ! Choisissez un autre nom.</system:String>
+    <system:String x:Key="ErrorUpdated">Échec de l'enregistrement !</system:String>
+    <system:String x:Key="ErrorWrongCredentials">Identifiants incorrects !</system:String>
+    <system:String x:Key="GreenTheme">Thème vert</system:String>
+    <system:String x:Key="BlueTheme">Thème bleu</system:String>
+    <system:String x:Key="Hospital">Hôpital Om El Masryin</system:String>
+    <system:String x:Key="Languages">Langues</system:String>
+    <system:String x:Key="LightTheme">Thème clair</system:String>
+    <system:String x:Key="Schedule">Horaires</system:String>
+    <system:String x:Key="Login">Se connecter</system:String>
+    <system:String x:Key="LoginTitle">Se connecter</system:String>
+    <system:String x:Key="Manager">Directeur</system:String>
+    <system:String x:Key="FirstName">Prénom</system:String>
+    <system:String x:Key="Password">Mot de passe</system:String>
+    <system:String x:Key="OldPassword">Ancien mot de passe</system:String>
+    <system:String x:Key="NewPassword">Nouveau mot de passe</system:String>
+    <system:String x:Key="PhoneNumber">Numéro de téléphone</system:String>
+    <system:String x:Key="RecordsSidebar">Dossiers</system:String>
+    <system:String x:Key="Register">S'inscrire</system:String>
+    <system:String x:Key="RegisterTitle">Inscription</system:String>
+    <system:String x:Key="Save">Enregistrer</system:String>
+    <system:String x:Key="Serbian">Serbe</system:String>
+    <system:String x:Key="SettingsSidebar">Paramètres</system:String>
+    <system:String x:Key="SuccessNewRegistration">Utilisateur créé avec succès !</system:String>
+    <system:String x:Key="SuccessUpdated">Mis à jour avec succès !</system:String>
+    <system:String x:Key="SurgeriesSidebar">Chirurgies</system:String>
+    <system:String x:Key="Surname">Nom de famille</system:String>
+    <system:String x:Key="Themes">Thèmes</system:String>
+    <system:String x:Key="Username">Nom d'utilisateur</system:String>
+    <system:String x:Key="ItemsSidebar">Inventaire</system:String>
+    <system:String x:Key="StaffSidebar">Personnel</system:String>
+    <system:String x:Key="Nurse">Infirmière</system:String>
+    <system:String x:Key="PatientsSidebar">Patients</system:String>
+    <system:String x:Key="Logout">Se déconnecter</system:String>
+    <system:String x:Key="Search">Recherche</system:String>
+    <system:String x:Key="Admissions">Admissions</system:String>
+    <system:String x:Key="AddNewAdmission">Ajouter une nouvelle admission</system:String>
+    <system:String x:Key="NameAndSurname">Nom et prénom</system:String>
+    <system:String x:Key="AdmissionDate">Date d'admission</system:String>
+    <system:String x:Key="DischargeDate">Date de sortie</system:String>
+    <system:String x:Key="Filter">Filtrer</system:String>
+    <system:String x:Key="Patients">Patients</system:String>
+    <system:String x:Key="AddNewPatient">Ajouter un nouveau patient</system:String>
+    <system:String x:Key="UpdatePatient">Mettre à jour le patient</system:String>
+    <system:String x:Key="Address">Adresse</system:String>
+    <system:String x:Key="BirthDate">Date de naissance</system:String>
+    <system:String x:Key="Operations">Opérations</system:String>
+    <system:String x:Key="Create">Créer</system:String>
+    <system:String x:Key="Update">Mettre à jour</system:String>
+    <system:String x:Key="AreYouSure">Êtes-vous sûr de vouloir effectuer cette action ?</system:String>
+    <system:String x:Key="Yes">Oui</system:String>
+    <system:String x:Key="No">Non</system:String>
+    <system:String x:Key="SuccessCreated">Créé avec succès !</system:String>
+    <system:String x:Key="SuccessDeleted">Supprimé avec succès !</system:String>
+    <system:String x:Key="Patient">Patient</system:String>
+    <system:String x:Key="UpdateAdmission">Mettre à jour l'admission</system:String>
+    <system:String x:Key="UpdateAppointment">Mettre à jour le rendez-vous</system:String>
+    <system:String x:Key="Appointment">Rendez-vous</system:String>
+    <system:String x:Key="AddNewAppointment">Ajouter un nouveau rendez-vous</system:String>
+    <system:String x:Key="AppointmentDate">Date du rendez-vous</system:String>
+    <system:String x:Key="Record">Dossier</system:String>
+    <system:String x:Key="AddNewRecord">Ajouter un nouveau dossier</system:String>
+    <system:String x:Key="RecordDate">Date du dossier</system:String>
+    <system:String x:Key="Diagnosis">Diagnostic</system:String>
+    <system:String x:Key="Prescription">Ordonnance</system:String>
+    <system:String x:Key="Prescriptions">Ordonnances</system:String>
+    <system:String x:Key="Surgeries">Chirurgies</system:String>
+
+    <system:String x:Key="SurgerysDates">Dates des opérations chirurgicales</system:String>
+    <system:String x:Key="AddnewSurgery">Ajouter une nouvelle chirurgie</system:String>
+    <system:String x:Key="AddnewRecord">Ajouter un nouveau dossier</system:String>
+    <system:String x:Key="Recipe">Recette</system:String>
+    <system:String x:Key="Are you sure">Êtes-vous sûr de vouloir effectuer cette action ?</system:String>
+    <system:String x:Key="ok">D'accord</system:String>
+    <system:String x:Key="Inventory">Inventaire</system:String>
+    <system:String x:Key="Title">Titre</system:String>
+    <system:String x:Key="WELCOME2">Bienvenue dans le tableau de bord du gestionnaire</system:String>
+    <system:String x:Key="Addanewitem">Ajouter un nouvel élément</system:String>
+    <system:String x:Key="DatesDetails">Détails des dossiers</system:String>
+    <system:String x:Key="error">Erreur</system:String>
+
+
+    <system:String x:Key="FRANCE">Français</system:String>
+    <system:String x:Key="English">Anglais</system:String>
+    <system:String x:Key="Arabic">Arabe</system:String>
+
+
+
+
+
+    <system:String x:Key="AddNewSurgery">Ajouter une nouvelle opération</system:String>
+    <system:String x:Key="SurgeryDate">Date de l'opération</system:String>
+    <system:String x:Key="Notes">Notes</system:String>
+    <system:String x:Key="UpdateSurgery">Mettre à jour l'opération</system:String>
+    <system:String x:Key="UpdateRecord">Mettre à jour le dossier</system:String>
+    <system:String x:Key="Items">Éléments</system:String>
+    <system:String x:Key="AddNewItem">Ajouter un nouvel élément</system:String>
+    <system:String x:Key="ItemName">Nom de l'élément</system:String>
+    <system:String x:Key="Staff">Personnel</system:String>
+    <system:String x:Key="UpdateStaff">Mettre à jour le personnel</system:String>
+    <system:String x:Key="Profession">Profession</system:String>
+    <system:String x:Key="AddNewPerson">Ajouter une nouvelle personne</system:String>
+    <system:String x:Key="ErrorCantPerformThis">Impossible d'effectuer cette action !</system:String>
+    <system:String x:Key="Managers">Directeurs</system:String>
+    <system:String x:Key="Doctors">Médecins</system:String>
+    <system:String x:Key="Nurses">Infirmières</system:String>
+
+
+
+
+</ResourceDictionary>
