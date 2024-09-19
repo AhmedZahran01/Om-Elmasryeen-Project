@@ -9,7 +9,11 @@ namespace DataAcessLayer.Models
 {
     public class ModelBase : INotifyPropertyChanged
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
+        public string Password { get; set; } = null!;
+        public string Theme { get; set; } = null!;
+        public string Language { get; set; } = null!;
+
         private string _name = string.Empty;
         private string _surname = string.Empty;
         private string _contact = string.Empty;

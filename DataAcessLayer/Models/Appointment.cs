@@ -12,9 +12,9 @@ namespace DataAcessLayer.Models
         #region Poco Class
        
         public int Id { get; set; }
-        public DateTime _Date { get; set; }
-        public int _DoctorIdDoctor { get; set; }
-        public int _PatientIdPatient { get; set; }
+        private DateTime _Date { get; set; }
+        private int _DoctorIdDoctor { get; set; }
+        private int _PatientIdPatient { get; set; }
 
         public virtual Doctor _DoctorIdDoctorNavigation { get; set; } = null!;
         public virtual Patient _PatientIdPatientNavigation { get; set; } = null!;

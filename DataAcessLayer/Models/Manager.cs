@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace DataAcessLayer.Models
 {
     public class Manager :ModelBase
-    {
-        public string Password { get; set; } = null!;
-        public string Theme { get; set; } = null!;
-        public string Language { get; set; } = null!;
+    { 
+
     }
 }

@@ -12,11 +12,11 @@ namespace DataAcessLayer.Models
         #region Poco Class
 
         public int Id { get; set; }
-        public DateTime AdmissionDate { get; set; }
-        public DateTime DischargeDate { get; set; }
-        public int _PatientId { get; set; }
+        private DateTime AdmissionDate { get; set; }
+        private DateTime DischargeDate { get; set; }
+        private int _PatientId { get; set; }
         public virtual Patient _Patient { get; set; } = null!;
-        private DateTime _EntryDate;
+        private  DateTime _EntryDate;
         private DateTime _ExitDate; //تاريخ الخروج 
 
         #endregion
