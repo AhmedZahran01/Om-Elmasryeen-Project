@@ -13,11 +13,11 @@ namespace DataAcessLayer.Models
        
         public int                    Id                        { get; set; }
         private DateTime             _Date                      { get; set; }
-        private int               _DoctorIdDoctor               { get; set; }
-        private int               _PatientIdPatient             { get; set; }
+        public int               _Doctor2Id               { get; set; }
+        public int               _Patient2Id             { get; set; }
 
-        public virtual Doctor  _DoctorIdDoctorNavigation        { get; set; } = null!;
-        public virtual Patient _PatientIdPatientNavigation      { get; set; } = null!;
+        public virtual Doctor  _Doctor2        { get; set; } = null!;
+        public virtual Patient _Patient2      { get; set; } = null!;
 
         #endregion
 
@@ -37,53 +37,53 @@ namespace DataAcessLayer.Models
             }
         }
 
-        public int DoctorId
+        public int Doctor
         {
-            get { return _DoctorIdDoctor; }
+            get { return _Doctor2Id; }
             set
             {
-                if (_DoctorIdDoctor != value)
+                if (_Doctor2Id != value)
                 {
-                    _DoctorIdDoctor = value;
-                    OnPropertyChanged(nameof(DoctorId));
+                    _Doctor2Id = value;
+                    OnPropertyChanged(nameof(Doctor));
                 }
             }
         }
 
         public int PatientId
         {
-            get { return _PatientIdPatient; }
+            get { return _Patient2Id; }
             set
             {
-                if (_PatientIdPatient != value)
+                if (_Patient2Id != value)
                 {
-                    _PatientIdPatient = value;
+                    _Patient2Id = value;
                     OnPropertyChanged(nameof(PatientId));
                 }
             }
         }
 
-        public virtual Doctor Doctor
+        public virtual Doctor _Doctor
         {
-            get { return _DoctorIdDoctorNavigation; }
+            get { return _Doctor2; }
             set
             {
-                if (_DoctorIdDoctorNavigation != value)
+                if (_Doctor2 != value)
                 {
-                    _DoctorIdDoctorNavigation = value;
-                    OnPropertyChanged(nameof(Doctor));
+                    _Doctor2 = value;
+                    OnPropertyChanged(nameof(_Doctor));
                 }
             }
         }
 
         public virtual Patient Patient
         {
-            get { return _PatientIdPatientNavigation; }
+            get { return _Patient2; }
             set
             {
-                if (_PatientIdPatientNavigation != value)
+                if (_Patient2 != value)
                 {
-                    _PatientIdPatientNavigation = value;
+                    _Patient2 = value;
                     OnPropertyChanged(nameof(Patient));
                 }
             }

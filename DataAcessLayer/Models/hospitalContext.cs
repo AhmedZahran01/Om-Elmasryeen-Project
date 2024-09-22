@@ -47,7 +47,7 @@ namespace DataAcessLayer.Models
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseMySQL
-                 ("server=localhost;database=hospitalDotNet8PROJECT;uid=root;pwd=new_password;");
+                 ("server=localhost;database=hospital7DotNet8PROJECT;uid=root;pwd=new_password;");
 
                 //        "server=localhost;database=hospital;uid=root;pwd=new_password;"
 
@@ -106,7 +106,7 @@ namespace DataAcessLayer.Models
             {
                 entity.ToTable("appointment");
 
-                entity.HasIndex(e => e.DoctorId, "fk_Appointment_Doctor_idx");
+                entity.HasIndex(e => e.Doctor, "fk_Appointment_Doctor_idx");
 
                 entity.HasIndex(e => e.PatientId, "fk_Appointment_Patient1_idx");
 
@@ -116,13 +116,13 @@ namespace DataAcessLayer.Models
                     .HasColumnType("datetime")
                     .HasColumnName("date");
 
-                entity.Property(e => e.DoctorId).HasColumnName("Doctor_idDoctor");
+                entity.Property(e => e.Doctor).HasColumnName("Doctor_idDoctor");
 
                 entity.Property(e => e.PatientId).HasColumnName("Patient_idPatient");
 
-                entity.HasOne(d => d.Doctor)
+                entity.HasOne(d => d._Doctor)
                     .WithMany(p => p.Appointments)
-                    .HasForeignKey(d => d.DoctorId)
+                    .HasForeignKey(d => d.Doctor)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Appointment_Doctor");
 

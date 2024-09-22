@@ -20,7 +20,7 @@ namespace DataAcessLayer.Services
         public IEnumerable<Appointment> GetAll()
         {
             return _context.Appointments
-                .Include(a => a.Doctor)
+                .Include(a => a._Doctor)
                 .Include(a => a.Patient)
                 .OrderBy(a => a.Date)
             .ToList();
@@ -29,7 +29,7 @@ namespace DataAcessLayer.Services
         public IEnumerable<Appointment> GetAllByDoctor(int doctorId)
         {
             return _context.Appointments
-                .Where(a => a.DoctorId == doctorId)
+                .Where(a => a.Doctor == doctorId)
                 .Include(a => a.Patient)
                 .OrderBy(a => a.Date)
             .ToList();
@@ -48,7 +48,7 @@ namespace DataAcessLayer.Services
             if (existingAppointment != null)
             {
                 existingAppointment.Date = updatedAppointment.Date;
-                existingAppointment.DoctorId = updatedAppointment.DoctorId;
+                existingAppointment.Doctor = updatedAppointment.Doctor;
                 existingAppointment.PatientId = updatedAppointment.PatientId;
 
                 _context.SaveChanges();

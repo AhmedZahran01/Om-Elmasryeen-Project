@@ -26,7 +26,7 @@ namespace DataAcessLayer.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    b.Property<int>("_PatientId1")
+                    b.Property<int>("Patient2Id")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("entryDate")
@@ -43,7 +43,7 @@ namespace DataAcessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("_PatientId1");
+                    b.HasIndex("Patient2Id");
 
                     b.HasIndex(new[] { "patientId" }, "fk_Admission_Patient1_idx");
 
@@ -61,7 +61,7 @@ namespace DataAcessLayer.Migrations
                         .HasColumnType("datetime")
                         .HasColumnName("date");
 
-                    b.Property<int>("DoctorId")
+                    b.Property<int>("Doctor")
                         .HasColumnType("int")
                         .HasColumnName("Doctor_idDoctor");
 
@@ -69,19 +69,19 @@ namespace DataAcessLayer.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Patient_idPatient");
 
-                    b.Property<int>("_DoctorIdDoctorNavigationId")
+                    b.Property<int>("_Doctor2Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("_PatientIdPatientNavigationId")
+                    b.Property<int>("_Patient2Id")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("_DoctorIdDoctorNavigationId");
+                    b.HasIndex("_Doctor2Id");
 
-                    b.HasIndex("_PatientIdPatientNavigationId");
+                    b.HasIndex("_Patient2Id");
 
-                    b.HasIndex(new[] { "DoctorId" }, "fk_Appointment_Doctor_idx");
+                    b.HasIndex(new[] { "Doctor" }, "fk_Appointment_Doctor_idx");
 
                     b.HasIndex(new[] { "PatientId" }, "fk_Appointment_Patient1_idx");
 
@@ -412,9 +412,9 @@ namespace DataAcessLayer.Migrations
 
             modelBuilder.Entity("DataAcessLayer.Models.Admission", b =>
                 {
-                    b.HasOne("DataAcessLayer.Models.Patient", "_Patient")
+                    b.HasOne("DataAcessLayer.Models.Patient", "Patient2")
                         .WithMany()
-                        .HasForeignKey("_PatientId1")
+                        .HasForeignKey("Patient2Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -424,16 +424,16 @@ namespace DataAcessLayer.Migrations
                         .IsRequired()
                         .HasConstraintName("fk_Admission_Patient1");
 
-                    b.Navigation("_Patient");
+                    b.Navigation("Patient2");
 
                     b.Navigation("patient");
                 });
 
             modelBuilder.Entity("DataAcessLayer.Models.Appointment", b =>
                 {
-                    b.HasOne("DataAcessLayer.Models.Doctor", "Doctor")
+                    b.HasOne("DataAcessLayer.Models.Doctor", "_Doctor")
                         .WithMany("Appointments")
-                        .HasForeignKey("DoctorId")
+                        .HasForeignKey("Doctor")
                         .IsRequired()
                         .HasConstraintName("fk_Appointment_Doctor");
 
@@ -443,25 +443,25 @@ namespace DataAcessLayer.Migrations
                         .IsRequired()
                         .HasConstraintName("fk_Appointment_Patient1");
 
-                    b.HasOne("DataAcessLayer.Models.Doctor", "_DoctorIdDoctorNavigation")
+                    b.HasOne("DataAcessLayer.Models.Doctor", "_Doctor2")
                         .WithMany()
-                        .HasForeignKey("_DoctorIdDoctorNavigationId")
+                        .HasForeignKey("_Doctor2Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DataAcessLayer.Models.Patient", "_PatientIdPatientNavigation")
+                    b.HasOne("DataAcessLayer.Models.Patient", "_Patient2")
                         .WithMany()
-                        .HasForeignKey("_PatientIdPatientNavigationId")
+                        .HasForeignKey("_Patient2Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Doctor");
 
                     b.Navigation("Patient");
 
-                    b.Navigation("_DoctorIdDoctorNavigation");
+                    b.Navigation("_Doctor");
 
-                    b.Navigation("_PatientIdPatientNavigation");
+                    b.Navigation("_Doctor2");
+
+                    b.Navigation("_Patient2");
                 });
 
             modelBuilder.Entity("DataAcessLayer.Models.Record", b =>

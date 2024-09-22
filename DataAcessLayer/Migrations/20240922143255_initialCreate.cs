@@ -114,7 +114,7 @@ namespace DataAcessLayer.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    _PatientId1 = table.Column<int>(type: "int", nullable: false),
+                    Patient2Id = table.Column<int>(type: "int", nullable: false),
                     admission_date = table.Column<DateTime>(type: "datetime", nullable: false),
                     discharge_date = table.Column<DateTime>(type: "datetime", nullable: false),
                     Patient_id = table.Column<int>(type: "int", nullable: false)
@@ -123,8 +123,8 @@ namespace DataAcessLayer.Migrations
                 {
                     table.PrimaryKey("PK_admission", x => x.id);
                     table.ForeignKey(
-                        name: "FK_admission_patient__PatientId1",
-                        column: x => x._PatientId1,
+                        name: "FK_admission_patient_Patient2Id",
+                        column: x => x.Patient2Id,
                         principalTable: "patient",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
@@ -142,8 +142,8 @@ namespace DataAcessLayer.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    _DoctorIdDoctorNavigationId = table.Column<int>(type: "int", nullable: false),
-                    _PatientIdPatientNavigationId = table.Column<int>(type: "int", nullable: false),
+                    _Doctor2Id = table.Column<int>(type: "int", nullable: false),
+                    _Patient2Id = table.Column<int>(type: "int", nullable: false),
                     date = table.Column<DateTime>(type: "datetime", nullable: false),
                     Doctor_idDoctor = table.Column<int>(type: "int", nullable: false),
                     Patient_idPatient = table.Column<int>(type: "int", nullable: false)
@@ -152,14 +152,14 @@ namespace DataAcessLayer.Migrations
                 {
                     table.PrimaryKey("PK_appointment", x => x.id);
                     table.ForeignKey(
-                        name: "FK_appointment_doctor__DoctorIdDoctorNavigationId",
-                        column: x => x._DoctorIdDoctorNavigationId,
+                        name: "FK_appointment_doctor__Doctor2Id",
+                        column: x => x._Doctor2Id,
                         principalTable: "doctor",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_appointment_patient__PatientIdPatientNavigationId",
-                        column: x => x._PatientIdPatientNavigationId,
+                        name: "FK_appointment_patient__Patient2Id",
+                        column: x => x._Patient2Id,
                         principalTable: "patient",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
@@ -253,9 +253,9 @@ namespace DataAcessLayer.Migrations
                 column: "Patient_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_admission__PatientId1",
+                name: "IX_admission_Patient2Id",
                 table: "admission",
-                column: "_PatientId1");
+                column: "Patient2Id");
 
             migrationBuilder.CreateIndex(
                 name: "fk_Appointment_Doctor_idx",
@@ -268,14 +268,14 @@ namespace DataAcessLayer.Migrations
                 column: "Patient_idPatient");
 
             migrationBuilder.CreateIndex(
-                name: "IX_appointment__DoctorIdDoctorNavigationId",
+                name: "IX_appointment__Doctor2Id",
                 table: "appointment",
-                column: "_DoctorIdDoctorNavigationId");
+                column: "_Doctor2Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_appointment__PatientIdPatientNavigationId",
+                name: "IX_appointment__Patient2Id",
                 table: "appointment",
-                column: "_PatientIdPatientNavigationId");
+                column: "_Patient2Id");
 
             migrationBuilder.CreateIndex(
                 name: "username_UNIQUE",

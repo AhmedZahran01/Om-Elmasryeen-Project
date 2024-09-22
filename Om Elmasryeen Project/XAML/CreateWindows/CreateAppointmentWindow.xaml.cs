@@ -58,7 +58,7 @@ namespace Om_Elmasryeen_Project.XAML.CreateWindows
 
 
             DatePickerField.Value = appointment.Date;
-            cb_Doctor.SelectedItem = cb_Doctor.Items.OfType<Doctor>().FirstOrDefault(doc => doc.Id == appointment.DoctorId);
+            cb_Doctor.SelectedItem = cb_Doctor.Items.OfType<Doctor>().FirstOrDefault(doc => doc.Id == appointment.Doctor);
             cb_Patient.SelectedItem = cb_Patient.Items.OfType<Patient>().FirstOrDefault(pat => pat.Id == appointment.PatientId);
             Appointment = appointment;
 
@@ -79,14 +79,14 @@ namespace Om_Elmasryeen_Project.XAML.CreateWindows
 
             if (Appointment == null)
             {
-                AppointmentsService.Add(new Appointment { Date = (DateTime)appointmentDate, DoctorId = doctor.Id, PatientId = patient.Id });
+                AppointmentsService.Add(new Appointment { Date = (DateTime)appointmentDate, Doctor = doctor.Id, PatientId = patient.Id });
                 new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();
                 this.Close();
             }
             else
             {
                 Appointment.Date = (DateTime)appointmentDate;
-                Appointment.DoctorId = doctor.Id;
+                Appointment.Doctor = doctor.Id;
                 Appointment.PatientId = patient.Id;
 
                 AppointmentsService.Update(Appointment);

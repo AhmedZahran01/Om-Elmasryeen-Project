@@ -14,8 +14,10 @@ namespace DataAcessLayer.Models
         public int                     Id          { get; set; }
         private DateTime           AdmissionDate   { get; set; }
         private DateTime           DischargeDate   { get; set; }
-        private int                   _PatientId   { get; set; }
-        public virtual Patient         _Patient    { get; set; } = null!;
+        public int                 Patient2Id     { get; set; }
+
+        public virtual Patient Patient2 { get; set; } = null!;
+
         private  DateTime           _EntryDate;
         private DateTime           _ExitDate;         //تاريخ الخروج 
 
@@ -51,12 +53,12 @@ namespace DataAcessLayer.Models
 
         public int patientId
         {
-            get { return _PatientId; }
+            get { return Patient2Id; } 
             set
             {
-                if (_PatientId != value)
+                if (Patient2Id != value)
                 {
-                    _PatientId = value;
+                    Patient2Id = value;
                     OnPropertyChanged(nameof(patientId));
                 }
             }
@@ -64,12 +66,12 @@ namespace DataAcessLayer.Models
 
         public virtual Patient patient
         {
-            get { return _Patient; }
+            get { return Patient2; }
             set
             {
-                if (_Patient != value)
+                if (Patient2 != value)
                 {
-                    _Patient = value;
+                    Patient2 = value;
                     OnPropertyChanged(nameof(patient));
                 }
             }
