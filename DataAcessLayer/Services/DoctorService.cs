@@ -21,17 +21,17 @@ namespace DataAcessLayer.Services
 
         public IEnumerable<Doctor> GetAll()
         {
-            return _context.Doctors.ToList();
+            return _context.Doctorst.ToList();
         }
 
         public async Task<Doctor> GetByIdAsync(int id)
         {
-            return await _context.Doctors.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Doctorst.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public Doctor GetById(int id)
         {
-            return _context.Doctors.FirstOrDefault(x => x.Id == id);
+            return _context.Doctorst.FirstOrDefault(x => x.Id == id);
         }
 
         public async Task<bool> Update(Doctor doctor)
@@ -43,7 +43,7 @@ namespace DataAcessLayer.Services
 
             try
             {
-                _context.Doctors.Update(doctor);
+                _context.Doctorst.Update(doctor);
 
                 await _context.SaveChangesAsync();
                 return true;
@@ -57,11 +57,11 @@ namespace DataAcessLayer.Services
 
         public void Delete(int id)
         {
-            var toDelete = _context.Doctors.Find(id);
+            var toDelete = _context.Doctorst.Find(id);
 
             if (toDelete != null)
             {
-                _context.Doctors.Remove(toDelete);
+                _context.Doctorst.Remove(toDelete);
                 _context.SaveChanges();
             }
         }

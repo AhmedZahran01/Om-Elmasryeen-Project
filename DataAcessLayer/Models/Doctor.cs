@@ -11,9 +11,7 @@ namespace DataAcessLayer.Models
     {
         #region Poco Class
 
-        public string Password { get; set; } = null!; 
-        public string Theme { get; set; } = null!;
-        public string Language { get; set; } = null!;
+        
 
         public Doctor()
         {

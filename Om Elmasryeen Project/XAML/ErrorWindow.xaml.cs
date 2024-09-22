@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Om_Elmasryeen_Project.Languages_And_Themes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,20 @@ namespace Om_Elmasryeen_Project.XAML
     /// </summary>
     public partial class ErrorWindow : Window
     {
-        public ErrorWindow()
+        public string WindowMessage { get; set; }
+
+        public ErrorWindow(string message)
         {
+            WindowMessage = message;
+
             InitializeComponent();
+            DataContext = this;
+            this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace DataAcessLayer.Services
                 Language = "ar"
             };
 
-            HospitalContext.Doctors.Add(newDoctor);
+            HospitalContext.Doctorst.Add(newDoctor);
 
             try
             {
@@ -112,7 +112,7 @@ namespace DataAcessLayer.Services
 
         public Doctor LoginDoctor(string username, string password)
         {
-            Doctor doctor = HospitalContext.Doctors
+            Doctor doctor = HospitalContext.Doctorst
             .AsNoTracking()
             .FirstOrDefault(m => m.Username == username && m.Password == password);
 

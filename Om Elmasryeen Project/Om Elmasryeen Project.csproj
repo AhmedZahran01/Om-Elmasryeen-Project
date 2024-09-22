@@ -10,12 +10,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Login.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataAcessLayer\DataAcessLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Login.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Languages\ArabicResource.xaml">
+      <Generator></Generator>
+    </Page>
   </ItemGroup>
 
 </Project>

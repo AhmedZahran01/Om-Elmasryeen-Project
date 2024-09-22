@@ -33,15 +33,15 @@ namespace Om_Elmasryeen_Project.Languages_And_Themes
             switch (language)
             {
                 case "AR":
-                case "ar":   ResourceDictionary.Source = new Uri("../Language/Strings.ar.xaml", UriKind.Relative);
+                case "ar":   ResourceDictionary.Source = new Uri("../Languages/ArabicResource.xaml", UriKind.Relative);
                     CurrentLanguage = "ar"; break;
 
                 case "EN":
-                case "en":  ResourceDictionary.Source = new Uri("../Language/Strings.en.xaml", UriKind.Relative);
+                case "en":  ResourceDictionary.Source = new Uri("../Languages/EnglishResourse.xaml", UriKind.Relative);
                     CurrentLanguage = "en";  break;
                      
                 case "FR":
-                case "fr":  ResourceDictionary.Source = new Uri("../Language/Strings.FR.xaml", UriKind.Relative);
+                case "fr":  ResourceDictionary.Source = new Uri("../Languages/FranshResource.xaml", UriKind.Relative);
                     CurrentLanguage = "Fr";  break;
 
                 default:  throw new InvalidOperationException("Invalid language");

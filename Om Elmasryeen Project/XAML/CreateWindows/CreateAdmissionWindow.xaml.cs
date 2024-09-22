@@ -1,5 +1,10 @@
-﻿using System;
+﻿using DataAcessLayer.Models;
+using DataAcessLayer.Services;
+using Om_Elmasryeen_Project.Languages_And_Themes;
+using Org.BouncyCastle.Asn1.IsisMtt.X509;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +24,70 @@ namespace Om_Elmasryeen_Project.XAML.CreateWindows
     /// </summary>
     public partial class CreateAdmissionWindow : Window
     {
+        private AdmissionsService AdmissionsService = new();
+        private PatientService PatientService = new();
+        private Admission? Admission = null;
         public CreateAdmissionWindow()
         {
             InitializeComponent();
+            GetPatientsAndPopulateComboBox();
+        }
+
+        public CreateAdmissionWindow(Admission admission)
+        {
+            InitializeComponent();
+            GetPatientsAndPopulateComboBox();
+
+            DatePickerAdmissionField.Value = admission.entryDate;
+            DatePickerDischargeField.Value = admission.exitDate;
+            cb_Patient.SelectedItem = cb_Patient.Items.OfType<Patient>()
+                                          .FirstOrDefault(patient => patient.Id == admission.patient.Id);
+
+            Admission = admission;
+
+            Header.Text = LangHelper.GetString("UpdateAdmission");
+            CreateButton.Content = LangHelper.GetString("Update");
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            DateTime? dischargeDate = DatePickerDischargeField.Value;
+            DateTime? admissionDate = DatePickerAdmissionField.Value;
+            Patient patient = (Patient)cb_Patient.SelectedItem;
+            Trace.WriteLine(patient);
+            if (dischargeDate == null || admissionDate == null || patient == null)
+            {
+                new ErrorWindow(LangHelper.GetString("ErrorEmptyFields")).ShowDialog();
+                return;
+            }
 
+            if (Admission == null)
+            {
+                AdmissionsService.Add(new Admission
+                {
+                    entryDate = (DateTime)admissionDate,
+                    exitDate = (DateTime)
+                                     dischargeDate,
+                    patientId = patient.Id
+                });
+                new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                Admission.entryDate = (DateTime)admissionDate;
+                Admission.exitDate = (DateTime)dischargeDate;
+                Admission.patientId = patient.Id;
+
+                AdmissionsService.Update(Admission);
+                new SuccessWindow(LangHelper.GetString("SuccessUpdated")).ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void GetPatientsAndPopulateComboBox()
+        {
+            cb_Patient.ItemsSource = PatientService.GetAll();
         }
     }
 }

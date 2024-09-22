@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Om_Elmasryeen_Project.Languages_And_Themes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,16 +23,20 @@ namespace Om_Elmasryeen_Project.XAML
         public AreYouSureWindow()
         {
             InitializeComponent();
-        }
-
-        private void No_Click(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = this;
+            this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
         }
 
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = true;
+            this.Close();
+        }
 
+        private void No_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
         }
     }
 }

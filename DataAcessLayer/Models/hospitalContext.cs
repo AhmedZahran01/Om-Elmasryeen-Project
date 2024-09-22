@@ -29,7 +29,7 @@ namespace DataAcessLayer.Models
 
         public virtual DbSet<Admission> Admissions { get; set; } = null!;
         public virtual DbSet<Appointment> Appointments { get; set; } = null!;
-        public virtual DbSet<Doctor> Doctors { get; set; } = null!;
+        public virtual DbSet<Doctor> Doctorst { get; set; } = null!;
         public virtual DbSet<Item> Items { get; set; } = null!;
         public virtual DbSet<Manager> Managers { get; set; } = null!;
         public virtual DbSet<Nurse> Nurses { get; set; } = null!;
