@@ -23,5 +23,10 @@ namespace Om_Elmasryeen_Project.XAML
         {
             InitializeComponent();
         }
+
+        private void LogoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

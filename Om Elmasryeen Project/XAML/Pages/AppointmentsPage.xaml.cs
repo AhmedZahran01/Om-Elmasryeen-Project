@@ -24,5 +24,10 @@ namespace Om_Elmasryeen_Project.XAML.Pages
         {
             InitializeComponent();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

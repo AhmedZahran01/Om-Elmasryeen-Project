@@ -60,17 +60,21 @@
 
         <!--Filter Textbox-->
         <Grid Width="200" HorizontalAlignment="Right" Grid.Row="4">
-            <TextBlock Margin="15 0" VerticalAlignment="Center" 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="27*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="15,0,15,0" VerticalAlignment="Center" 
                      Foreground="{StaticResource TextColor}" 
                      IsHitTestVisible="False"
                          Panel.ZIndex="1" Text="{DynamicResource Search}"
                          Visibility="{Binding ElementName=textBoxFilter, 
               Path=Text, 
               Converter={StaticResource 
-              StringIsNullOrEmptyToVisibilityConverter}}" />
+              StringIsNullOrEmptyToVisibilityConverter}}" Grid.ColumnSpan="2" />
             <TextBox Name="textBoxFilter" 
                    Style="{StaticResource filterTextBox}"
-                   TextChanged="textBoxFilter_TextChanged"/>
+                   TextChanged="textBoxFilter_TextChanged" Grid.ColumnSpan="2"/>
         </Grid>
 
         <!--Data Grid-->
