@@ -47,7 +47,7 @@ namespace DataAcessLayer.Models
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseMySQL
-                 ("server=localhost;database=hospital;uid=root;pwd=new_password;");
+                 ("server=localhost;database=hospitalDotNet8PROJECT;uid=root;pwd=new_password;");
 
                 //        "server=localhost;database=hospital;uid=root;pwd=new_password;"
 
