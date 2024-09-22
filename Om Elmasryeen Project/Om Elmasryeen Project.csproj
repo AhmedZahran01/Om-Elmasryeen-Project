@@ -10,11 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="XAML\CreateWindows\" />
-    <Folder Include="XAML\Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="5.0.0" />
   </ItemGroup>
 

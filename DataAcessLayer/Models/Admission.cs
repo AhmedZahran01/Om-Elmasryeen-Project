@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace DataAcessLayer.Models
 {
-    public class Admission :INotifyPropertyChanged
+    public class Admission : INotifyPropertyChanged  // Admission  قبول     
     {
         #region Poco Class
 
-        public int Id { get; set; }
-        private DateTime AdmissionDate { get; set; }
-        private DateTime DischargeDate { get; set; }
-        private int _PatientId { get; set; }
-        public virtual Patient _Patient { get; set; } = null!;
-        private  DateTime _EntryDate;
-        private DateTime _ExitDate; //تاريخ الخروج 
+        public int                     Id          { get; set; }
+        private DateTime           AdmissionDate   { get; set; }
+        private DateTime           DischargeDate   { get; set; }
+        private int                   _PatientId   { get; set; }
+        public virtual Patient         _Patient    { get; set; } = null!;
+        private  DateTime           _EntryDate;
+        private DateTime           _ExitDate;         //تاريخ الخروج 
 
         #endregion
 
@@ -82,6 +82,7 @@ namespace DataAcessLayer.Models
         }
 
         #endregion
+
 
     }
 }

@@ -11,15 +11,16 @@ namespace DataAcessLayer.Models
     {
         #region Poco Class
        
-        public int Id { get; set; }
-        private DateTime _Date { get; set; }
-        private int _DoctorIdDoctor { get; set; }
-        private int _PatientIdPatient { get; set; }
+        public int                    Id                        { get; set; }
+        private DateTime             _Date                      { get; set; }
+        private int               _DoctorIdDoctor               { get; set; }
+        private int               _PatientIdPatient             { get; set; }
 
-        public virtual Doctor _DoctorIdDoctorNavigation { get; set; } = null!;
-        public virtual Patient _PatientIdPatientNavigation { get; set; } = null!;
+        public virtual Doctor  _DoctorIdDoctorNavigation        { get; set; } = null!;
+        public virtual Patient _PatientIdPatientNavigation      { get; set; } = null!;
 
         #endregion
+
 
         #region Implementations
        
