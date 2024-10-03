@@ -39,12 +39,16 @@
         </Grid.RowDefinitions>
 
         <!--Page Title-->
-        <TextBlock Text="{DynamicResource  Record}"   Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Left"/>
+        <TextBlock Text="{DynamicResource  Record}"   Grid.Row="1" FontSize="32" FontWeight="SemiBold"
+                   Margin="0 20 0 0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Left"/>
+
+      
 
         <!--Add Button-->
         <Button Name="AddButton" Style="{StaticResource addButton}" Click="AddButton_Click">
             <StackPanel Orientation="Horizontal">
-                <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11" Foreground="{StaticResource TextColor}"/>
+                <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" 
+                                       Height="11" Foreground="{StaticResource TextColor}"/>
                 <TextBlock Text="{DynamicResource AddnewRecord}"   
                          FontSize="24" 
                          Padding="0,0,220,20"/>
@@ -56,7 +60,9 @@
                  Background="{StaticResource TextColor}"
                  Margin="0 10 0 10"/>
 
-        <TextBlock Grid.Row="4" FontSize="18" FontWeight="SemiBold" Margin="1371,0,0,0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="79" Text="Search"/>
+        <TextBlock Grid.Row="4" FontSize="18" FontWeight="SemiBold" Margin="1371,0,0,0"
+                   Foreground="{StaticResource TextColor}" HorizontalAlignment="Left"
+                   VerticalAlignment="Center" Width="79" Text="{StaticResource Search}"/>
 
         <!--Filter Textbox-->
         <Grid Width="200" HorizontalAlignment="Right" Grid.Row="4">
@@ -78,7 +84,10 @@
         </Grid>
 
         <!--Data Grid-->
-        <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="DataGrid" Style="{DynamicResource DataGridStyle1}" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" 
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                  CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="DataGrid" 
+                  Style="{DynamicResource DataGridStyle1}" >
             <DataGrid.Columns>
                 <DataGridTemplateColumn IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.Header>
@@ -86,7 +95,7 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock VerticalAlignment="Center">
+                            <TextBlock  VerticalAlignment="Center">
                                 <TextBlock.Text>
                                     <MultiBinding StringFormat="{}{0} {1}">
                                         <Binding Path="Patient.Name" UpdateSourceTrigger="PropertyChanged"/>
@@ -104,23 +113,7 @@
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
-                <!--#region Date Comment Region  -->
-
-                <!--<DataGridTextColumn Binding="{Binding AdmissionDate, 
-                       UpdateSourceTrigger=PropertyChanged, ConverterCulture=sr-Latn-RS}" 
-                                       IsReadOnly="True" Width="*">
-                       <DataGridTextColumn.Header>
-                           <TextBlock Text="{DynamicResource AdmissionDate}" />
-                       </DataGridTextColumn.Header>
-                   </DataGridTextColumn>-->
-
-                <!--<DataGridTextColumn Binding="{Binding DischargeDate, UpdateSourceTrigger=PropertyChanged,  ConverterCulture=sr-Latn-RS}" IsReadOnly="True" Width="*">
-                       <DataGridTextColumn.Header>
-                           <TextBlock Text="{DynamicResource DischargeDate}" />
-                       </DataGridTextColumn.Header>
-                   </DataGridTextColumn>-->
-
-                <!--#endregion-->
+              
 
                 <DataGridTextColumn Binding="{Binding AdmissionDate, 
                       UpdateSourceTrigger=PropertyChanged, 

@@ -86,7 +86,9 @@ namespace Om_Elmasryeen_Project.XAML.CreateWindows
             {
                 if (Record == null)
                 {
-                    RecordsService.Add(new Record { Date = (DateTime)recordDate, Prescription = prescriptionStr, Diagnosis = diagnosisStr, DoctorId = doctor.Id, PatientId = patient.Id });
+                    RecordsService.Add(new Record { Date = (DateTime)recordDate, 
+                        Prescription = prescriptionStr, Diagnosis = diagnosisStr, 
+                        DoctorId = doctor.Id, PatientId = patient.Id });
                     new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();
                     this.Close();
                 }

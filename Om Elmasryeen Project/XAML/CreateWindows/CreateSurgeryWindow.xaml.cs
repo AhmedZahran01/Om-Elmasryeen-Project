@@ -81,7 +81,8 @@ namespace Om_Elmasryeen_Project.XAML.CreateWindows
             {
                 if (Surgery == null)
                 {
-                    SurgeriesService.Add(new Surgery { Date = (DateTime)surgeryDate, Notes = notesStr, DoctorId = doctor.Id, PatientId = patient.Id });
+                    SurgeriesService.Add(new Surgery { Date = (DateTime)surgeryDate,
+                        Notes = notesStr, DoctorId = doctor.Id, PatientId = patient.Id });
                     new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();
                     this.Close();
                 }
